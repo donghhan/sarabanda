@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border: transparent;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
