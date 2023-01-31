@@ -1,11 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__, static_url_path="/static")
 
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    keyword = request.args.get("keyword")
+    return render_template("home.html", keyword=keyword)
+
+
+@app.route("/search")
+def search():
+    return render_template("search.html")
 
 
 if __name__ == "__main__":

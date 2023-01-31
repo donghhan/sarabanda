@@ -12,11 +12,45 @@
                 <h1 class="main-title">Don't get stuck in a job you hate!</h1>
                 <h2 class="sub-title">Do yourself a favor. Let's find a better one now!</h2>
             </div>
-            <form action="" class="input-form">
+            <form action="/search" class="input-form">
                 <input type="text" placeholder="Search..." name="keyword" />
                 <img src="{{ url_for('static', filename='images/magnifying-glass.svg') }}" alt="Magnifying Glass">
                 <button>Find a job</button>
             </form>
+        </div>
+    </section>
+    <section id="why">
+        <div class="text-wrapper">
+            <h1>Why you need to change a job now?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, tempora repellendus. Exercitationem eveniet illum quas, magnam ipsum qui rerum cumque in adipisci cum, eum aut iusto omnis fugiat laborum harum. Accusamus quos, cupiditate nobis iste voluptas a! Quos explicabo reiciendis id suscipit eum nemo, autem eveniet adipisci voluptatum cumque fuga.</p>
+        </div>
+    </section>
+    <section id="important">
+        <div class="section-left">
+            <div class="text-wrapper">
+                <h1>How important is it to love what you do?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi exercitationem mollitia ut magni possimus illo dolorum laudantium accusamus ad id voluptatum saepe ratione labore, quis, expedita impedit, vitae quod officia.</p>
+            </div>
+        </div>
+        <div class="section-right">
+            <video muted autoplay loop>
+                <source src="{{ url_for('static', filename='videos/bg-video.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+    </section>
+    <section id="featured">
+        <h1>Featured job offers</h1>
+        <div class="job-card">
+            <div class="position"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe obcaecati eum quasi vero unde totam quo dicta neque facilis architecto!</p>
+        </div>
+    </section>
+    <section id="expert">
+        <div class="image-wrapper">
+            <img src="{{ url_for('static', filename='images/man.jpg') }}" alt="man">
+        </div>
+        <div class="text-wrapper">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem autem, esse possimus laborum delectus voluptates rerum quia veniam, consectetur aliquid non expedita. Quasi, ea tenetur neque rerum nisi magnam repellendus nobis dolores quaerat unde dicta.</p>
         </div>
     </section>
 {% endblock body %}
