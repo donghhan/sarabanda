@@ -66,6 +66,9 @@ class JobsDBParser:
 
         return results
 
+    def write_to_file(self):
+        file = open(f"{self.keyword}.csv", "w")
+
 
 a = len(JobsDBParser("frontend").parser())
 print(a)
