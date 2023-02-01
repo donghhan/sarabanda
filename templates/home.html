@@ -14,8 +14,8 @@
             </div>
             <form action="/search" class="input-form">
                 <input type="text" placeholder="Search..." name="keyword" />
-                <img src="{{ url_for('static', filename='images/magnifying-glass.svg') }}" alt="Magnifying Glass">
-                <button>Find a job</button>
+                <button class="web-find-btn">Find a job</button>
+                <button class="mobile-find-btn"><img src="{{ url_for('static', filename='images/magnifying-glass.svg') }}" alt="Magnifying Glass" /></button>
             </form>
         </div>
     </section>
