@@ -318,10 +318,10 @@
 
   #important .section-left {
     width: 100%;
-    min-height: 50vh;
+    max-height: 40%;
     display: flex;
     justify-content: center;
-    padding: 0 5%;
+    padding: 10%;
   }
 
   #important .section-left .text-wrapper {
@@ -339,6 +339,11 @@
 
   #important .section-right {
     width: 100%;
+    height: 50vh;
+  }
+
+  #important .section-right video {
+    object-fit: cover;
   }
 }
 
@@ -375,22 +380,111 @@
 
 #featured {
   width: 100vw;
-  min-height: 80vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #featured h1 {
   font-size: 48px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 50px;
 }
 
-#featured .job-card {
+#featured .job-card__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 560px));
+  gap: 25px;
+  padding: 0 5%;
+}
+
+#featured .job-card__wrapper .job-card {
   max-width: 560px;
   height: 330px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 4%;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#featured .job-card__wrapper .job-card .position {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+#featured .job-card__wrapper .job-card .position .info {
+  margin-left: 70px;
+}
+
+#featured .job-card__wrapper .job-card .position .info span {
+  display: block;
+}
+
+#featured .job-card__wrapper .job-card .position .info .job-title {
+  color: rgba(79, 86, 96);
+}
+
+#featured .job-card__wrapper .job-card .position .info .company-name {
+  color: rgba(56, 133, 229);
+}
+
+#featured .job-card__wrapper .job-card .position .info .company-location {
+  color: rgba(157, 159, 162);
+}
+
+#featured .job-card__wrapper .job-card .position .company-logo {
+  width: 70px;
+}
+
+#featured .job-card__wrapper .job-card p {
+  color: rgba(79, 86, 96);
+  margin-bottom: 20px;
+  line-height: 2;
+  width: 100%;
+}
+
+#featured .job-card__wrapper .job-card a {
+  color: rgba(56, 133, 229, 1);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #featured h1 {
+    font-size: 40px;
+  }
+
+  #featured .job-card__wrapper .job-card {
+    padding: 5%;
+  }
+
+  #featured .job-card__wrapper .job-card .position .info {
+    margin-left: 10%;
+    font-size: 12.5px;
+  }
+
+  #featured .job-card__wrapper .job-card p {
+    line-height: 1.5;
+    font-size: 13.5px;
+  }
+
+  #featured .job-card__wrapper .job-card a {
+    font-size: 13.5px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  #featured .job-card__wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: auto 0;
+  }
 }
 
 #expert {
