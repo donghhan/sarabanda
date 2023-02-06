@@ -1,0 +1,5 @@
+{
+    "verbose": true,
+    "ignore": ["webpack.config.js", "node_modules"],
+    "exec": "babel-node src/init.js"
+}

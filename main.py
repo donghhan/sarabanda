@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request
 
-app = Flask(
-    __name__, static_url_path="/static", template_folder="/templates"
-)
+app = Flask(__name__, static_url_path="/dist", template_folder="/dist/templates")
 
 
 @app.route("/")
