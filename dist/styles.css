@@ -1,0 +1,71 @@
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/styles.scss ***!
+  \***************************************************************************************************************/
+#home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: 90% 90%;
+  background-size: cover;
+  position: relative;
+  padding: 0 50px;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#home .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+#home .title-wrapper {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+input {
+  border: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
