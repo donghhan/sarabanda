@@ -32,6 +32,48 @@
   text-align: center;
   color: rgb(255, 255, 255);
 }
+#home .main-title {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+#home .sub-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 45px;
+}
+#home .input-from {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 7.5px 30px;
+}
+#home .input-from input {
+  height: 100%;
+  width: 80%;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 19px;
+  margin-right: auto;
+}
+#home .input-from::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 19px;
+}
+#home .input-from .web-find-btn {
+  background-color: rgb(56, 133, 229);
+  height: 100%;
+  width: 150px;
+  border-radius: 6px;
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  margin-left: 30px;
+}
+#home .input-from .mobile-find-btn {
+  display: none;
+}
 
 * {
   box-sizing: border-box;

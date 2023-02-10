@@ -20,6 +20,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        type: "asset/resource",
+      },
+      {
         test: /\.(s[ac]ss)$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
@@ -30,8 +34,29 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          context: path.resolve(__dirname, "src"),
+          from: "./templates/**/*.html",
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: "styles.css",
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new HtmlMinimizerPlugin({
+        parallel: true,
+        minimizerOptions: {
+          collapseWhitespace: true,
+          minifyURLs: true,
+          removeComments: true,
+        },
+      }),
+    ],
+  },
 };

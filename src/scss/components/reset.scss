@@ -1,0 +1,38 @@
+@use "../abstract";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: abstract.$raleway;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+input {
+  border: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+}
