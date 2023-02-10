@@ -8,15 +8,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
+const devMode = process.env.NODE_ENV === "development";
+
 module.exports = {
-  entry: "./src/js/index.js",
+  entry: "./src/init.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
     clean: true,
   },
-  mode: "development",
-  watch: "development" ? true : false,
+  mode: none,
+  watch: true,
   module: {
     rules: [
       {
@@ -37,13 +39,15 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          context: path.resolve(__dirname, "src"),
-          from: "./templates/**/*.html",
+          from: "./src/templates",
+          to({ context, absoluteFilename }) {
+            return `templates/${path.relative(context, absoluteFilename)}`;
+          },
         },
       ],
     }),
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "static/styles.css",
     }),
   ],
   optimization: {
@@ -57,6 +61,7 @@ module.exports = {
           removeComments: true,
         },
       }),
+      new CssMinimizerPlugin(),
     ],
   },
 };

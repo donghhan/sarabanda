@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev": "webpack --mode=development",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
