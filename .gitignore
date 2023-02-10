@@ -10,9 +10,10 @@ __pycache__
 *.so
 
 # Distribution / packaging
+dist
+dist/bundle.js
 .Python
 build/
-dist/
 develop-eggs/
 downloads/
 eggs/
