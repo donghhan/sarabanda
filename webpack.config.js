@@ -17,7 +17,7 @@ module.exports = {
     filename: "bundle.js",
     clean: true,
   },
-  mode: none,
+  mode: "none",
   watch: true,
   module: {
     rules: [

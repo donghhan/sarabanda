@@ -1,0 +1,29 @@
+$breakpoints: (
+  mobileVertical: (
+    max: 374.99px,
+  ),
+  mobileHorizontal: (
+    min: 375px,
+    max: 767.99px,
+  ),
+  tablet: (
+    min: 768px,
+    max: 1023.99px,
+  ),
+);
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-values: map-get($breakpoints, $breakpoint);
+    $breakpoint-min: map-get($breakpoint-values, min);
+    $breakpoint-max: map-get($breakpoint-values, max);
+
+    @media screen and (min-width: $breakpoint-min) and (max-width: $breakpoint-max) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $breakpoint-max) {
+      @content;
+    }
+  }
+}
