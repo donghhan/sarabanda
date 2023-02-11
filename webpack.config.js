@@ -15,6 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
+    assetModuleFilename: "static/assets/[name][ext]",
     clean: true,
   },
   mode: "none",
@@ -23,15 +24,25 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        type: "asset/resource",
+        loader: "html-loader",
       },
       {
         test: /\.(s[ac]ss)$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpg|svg|jpeg|gif|ico)$/i,
-        use: "file-loader",
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset",
+        generator: {
+          publicPath: "dist/static/images",
+        },
+      },
+      {
+        test: /\.(mp4)$/i,
+        type: "asset",
+        generator: {
+          publicPath: "dist/static/videos",
+        },
       },
     ],
   },
@@ -62,6 +73,39 @@ module.exports = {
         },
       }),
       new CssMinimizerPlugin(),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+              [
+                "svgo",
+                {
+                  plugins: [
+                    {
+                      name: "preset-default",
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          addAttributesToSVGElement: {
+                            params: {
+                              attributes: [
+                                { xmlns: "http://www.w3.org/2000/svg" },
+                              ],
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+      }),
     ],
   },
 };
