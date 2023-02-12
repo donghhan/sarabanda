@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //   background-image: url("/assets/background.jpg");
   background-repeat: no-repeat;
   background-position: 90% 90%;
   background-size: cover;
@@ -48,7 +47,7 @@
     margin-bottom: 45px;
   }
 
-  .input-from {
+  .input-form {
     background-color: variables.$white;
     width: 100%;
     height: 60px;
@@ -199,8 +198,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 70px;
-    height: 100%;
+    padding: 0 50px;
 
     .text-wrapper {
       text-align: left;
@@ -209,10 +207,20 @@
 
       h1 {
         font-size: 40px;
+        margin-bottom: 50px;
       }
 
       p {
         font-size: 18px;
+        line-height: 2;
+        margin-bottom: 60px;
+      }
+
+      .outer-link {
+        font-size: 21px;
+        border: 1px solid variables.$white;
+        border-radius: 3px;
+        padding: 10px 20px;
       }
     }
   }
@@ -221,8 +229,8 @@
     width: 50%;
 
     video {
-      height: 100%;
       width: 100%;
+      height: 100%;
       object-fit: fill;
     }
   }
@@ -249,32 +257,40 @@
 
     .section-left {
       width: 100%;
+      min-height: 50vh;
       max-height: 40%;
       display: flex;
       justify-content: center;
       padding: 10%;
-    }
 
-    .section-left .text-wrapper {
-      text-align: center;
-      padding: 5% 0;
-    }
+      .text-wrapper {
+        text-align: center;
+        padding: 5% 0;
 
-    .section-left .text-wrapper h1 {
-      font-size: 30px;
-    }
+        h1 {
+          font-size: 30px;
+          margin-bottom: 30px;
+        }
 
-    .section-left .text-wrapper p {
-      font-size: 14px;
+        p {
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+
+        .outer-link {
+          font-size: 16px;
+          padding: 7px 14px;
+        }
+      }
     }
 
     .section-right {
       width: 100%;
       height: 50vh;
-    }
 
-    .section-right video {
-      object-fit: cover;
+      video {
+        object-fit: cover;
+      }
     }
   }
 
@@ -288,10 +304,14 @@
       display: flex;
       justify-content: center;
       padding: 0 5%;
-    }
 
-    .section-left .text-wrapper {
-      text-align: center;
+      .text-wrapper {
+        text-align: center;
+
+        h1 {
+          font-size: 25px;
+        }
+      }
     }
 
     .section-left .text-wrapper h1 {
@@ -375,151 +395,6 @@
 
     .text-wrapper p {
       font-size: 12px;
-    }
-  }
-}
-
-#featured {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: 48px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 50px;
-  }
-
-  .job-card__wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(auto, 560px));
-    gap: 25px;
-    padding: 0 5%;
-
-    .job-card {
-      max-width: 560px;
-      height: 330px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-      padding: 4%;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      .position {
-        display: flex;
-        align-items: center;
-        font-size: 15px;
-        margin-bottom: 20px;
-        line-height: 1.5;
-
-        .info {
-          margin-left: 70px;
-
-          span {
-            display: block;
-          }
-
-          .job-title {
-            color: rgba(79, 86, 96);
-          }
-
-          .company-name {
-            color: variables.$signature;
-          }
-
-          .company-location {
-            color: rgba(157, 159, 162);
-          }
-
-          .company-logo {
-            width: 70px;
-          }
-        }
-      }
-
-      p {
-        color: rgba(79, 86, 96);
-        margin-bottom: 20px;
-        line-height: 2;
-        width: 100%;
-      }
-
-      a {
-        color: variables.$signature;
-        font-weight: 700;
-      }
-    }
-  }
-
-  @include mixins.responsive(tablet) {
-    h1 {
-      font-size: 40px;
-    }
-
-    .job-card__wrapper .job-card {
-      padding: 5%;
-    }
-
-    .job-card__wrapper .job-card .position .info {
-      margin-left: 10%;
-      font-size: 12.5px;
-    }
-
-    .job-card__wrapper .job-card p {
-      line-height: 1.5;
-      font-size: 13.5px;
-    }
-
-    .job-card__wrapper .job-card a {
-      font-size: 13.5px;
-    }
-  }
-
-  @include mixins.responsive(mobileHorizontal) {
-    .job-card__wrapper {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      margin: auto 0;
-    }
-  }
-}
-
-#expert {
-  width: 100vw;
-  min-height: 50vh;
-  background-color: rgba(0, 0, 0, 1);
-  display: flex;
-
-  .image-wrapper {
-    width: 50%;
-    height: inherit;
-    overflow: hidden;
-    position: relative;
-
-    img {
-      width: 70%;
-      object-fit: cover;
-      position: absolute;
-      top: -20%;
-      left: 20%;
-    }
-  }
-
-  .text-wrapper {
-    width: 50%;
-    height: inherit;
-    display: flex;
-    align-items: center;
-
-    p {
-      max-width: 600px;
-      color: variables.$white;
-      text-align: left;
-      line-height: 2;
     }
   }
 }

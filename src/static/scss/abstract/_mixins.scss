@@ -12,16 +12,19 @@ $breakpoints: (
   ),
 );
 
-@mixin responsive($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $breakpoint-values: map-get($breakpoints, $breakpoint);
+@mixin responsive($device) {
+  $breakpoint-values: map-get($breakpoints, $device);
+
+  @if map-has-key($breakpoint-values, min, max) {
     $breakpoint-min: map-get($breakpoint-values, min);
     $breakpoint-max: map-get($breakpoint-values, max);
 
     @media screen and (min-width: $breakpoint-min) and (max-width: $breakpoint-max) {
       @content;
     }
-  } @else {
+  } @else if map-has-key($breakpoint-values, max) {
+    $breakpoint-max: map-get($breakpoint-values, max);
+
     @media screen and (max-width: $breakpoint-max) {
       @content;
     }

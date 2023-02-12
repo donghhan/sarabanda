@@ -3,7 +3,7 @@
 
 
 {% block body %}
-    <section id="home">
+    <section id="home" style="background-image: url('../static/assets/background.jpg')">
         <div class="content-wrapper">
             <div class="title-wrapper">
                 <h1 class="main-title">Don't get stuck in a job you hate!</h1>
@@ -12,76 +12,29 @@
             <form action="/search" class="input-form">
                 <input type="text" placeholder="Search..." name="keyword" />
                 <button class="web-find-btn">Find a job</button>
-                <button class="mobile-find-btn"><img src="{{ url_for('static', filename='images/magnifying-glass.svg') }}" alt="Magnifying Glass" /></button>
+                <button class="mobile-find-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="rgba(56, 133, 229, 1)" data-name="Camada 1" viewBox="0 0 100 100"><path d="M98.53579,91.46538,71.28155,64.21124a39.89214,39.89214,0,1,0-7.07041,7.07021L91.46548,98.53569a4.99923,4.99923,0,0,0,7.07011,0h.0002A4.99927,4.99927,0,0,0,98.53579,91.46538Zm-58.70831-21.813A29.82626,29.82626,0,1,1,69.65334,39.82657,29.86089,29.86089,0,0,1,39.82748,69.65242Z"/></svg></button>
             </form>
         </div>
     </section>
     <section id="why">
         <div class="text-wrapper">
             <h1>Why you need to change a job now?</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, tempora repellendus. Exercitationem eveniet illum quas, magnam ipsum qui rerum cumque in adipisci cum, eum aut iusto omnis fugiat laborum harum. Accusamus quos, cupiditate nobis iste voluptas a! Quos explicabo reiciendis id suscipit eum nemo, autem eveniet adipisci voluptatum cumque fuga.</p>
+            <p>The interviewer asks many questions at the time of the interview. If you change a job, then the most important question asked by the interviewer is what are the reasons for your job change and one of the common reasons for a job change is career enhancement and higher pay. You may also fill out reasons in the resignation form for changing the job in your current job. Preparing a concise and clear answer will help the employer to know about your future goals.</p>
         </div>
     </section>
     <section id="important">
         <div class="section-left">
             <div class="text-wrapper">
                 <h1>How important is it to love what you do?</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi exercitationem mollitia ut magni possimus illo dolorum laudantium accusamus ad id voluptatum saepe ratione labore, quis, expedita impedit, vitae quod officia.</p>
+                <p>Being happy at work and loving what you do is an overall productivity booster and enhances performance. People who enjoy their jobs are more likely to be optimistic, motivated, learn faster, make fewer mistakes, and better business decisions.</p>
+                <a class="outer-link" href="https://appliedpsychologydegree.usc.edu/blog/how-liking-your-job-will-help-you-succeed/">Learn more</a>
             </div>
         </div>
         <div class="section-right">
             <video muted autoplay loop>
-                <source src="{{ url_for('static', filename='videos/bg-video.mp4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='assets/bg-video.mp4') }}" type="video/mp4">
             </video>
         </div>
     </section>
-    <section id="featured">
-        <h1>Featured job offers</h1>
-        <div class="job-card__wrapper">
-            <div class="job-card">
-                <div class="position">
-                    <svg role="img" class="company-logo" fill="#1DA1F2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                    <div class="info">
-                        <span class="job-title">Senior Product Manager</span>
-                        <span class="company-name">Twitter</span>
-                        <span class="company-location">California, USA</span>
-                    </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe obcaecati eum quasi vero unde totam quo dicta neque facilis architecto!</p>
-                <a href="/">Read more</a>
-            </div>
-            <div class="job-card">
-                <div class="position">
-                    <svg class="company-logo" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#FFFC00"><title>Snapchat</title><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.225-3.651.307-4.837C7.392 1.077 10.739.807 11.727.807l.419-.015h.06z"/></svg>
-                    <div class="info">
-                        <span class="job-title">Senior Product Manager</span>
-                        <span class="company-name">Snapchat</span>
-                        <span class="company-location">California, USA</span>
-                    </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe obcaecati eum quasi vero unde totam quo dicta neque facilis architecto!</p>
-                <a href="/">Read more</a>
-            </div>
-            <div class="job-card">
-                <div class="position">
-                    <svg role="img" class="company-logo" fill="#FF6B6B" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Tinder</title><path d="M9.317 9.451c.045.073.123.12.212.12.06 0 .116-.021.158-.057l.015-.012c.39-.325.741-.66 1.071-1.017 3.209-3.483 1.335-7.759 1.32-7.799-.09-.21-.03-.459.15-.594.195-.135.435-.12.615.033 10.875 10.114 7.995 17.818 7.785 18.337-.87 3.141-4.335 5.414-8.444 5.53-.138.008-.242.008-.363.008-4.852 0-8.977-2.989-8.977-6.807v-.06c0-5.297 4.795-10.522 5.009-10.744.136-.149.345-.195.525-.105.18.076.297.255.291.451-.043 1.036.167 1.935.631 2.7v.015l.002.001z"/></svg>
-                    <div class="info">
-                        <span class="job-title">Senior Product Manager</span>
-                        <span class="company-name">Tinder</span>
-                        <span class="company-location">California, USA</span>
-                    </div>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe obcaecati eum quasi vero unde totam quo dicta neque facilis architecto!</p>
-                <a href="/">Read more</a>
-            </div>
-        </div>
-    </section>
-    <section id="expert">
-        <div class="image-wrapper">
-            <img src="{{ url_for('static', filename='images/man.jpg') }}" alt="man">
-        </div>
-        <div class="text-wrapper">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem autem, esse possimus laborum delectus voluptates rerum quia veniam, consectetur aliquid non expedita. Quasi, ea tenetur neque rerum nisi magnam repellendus nobis dolores quaerat unde dicta.</p>
-        </div>
-    </section>
+   
 {% endblock body %}
