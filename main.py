@@ -1,4 +1,5 @@
 import os
+from parser.jobsdb import parser
 from flask import Flask, render_template, request
 
 app = Flask(
@@ -10,13 +11,17 @@ app = Flask(
 
 @app.route("/")
 def home():
-    keyword = request.args.get("keyword")
-    return render_template("home.html", keyword=keyword)
+    return render_template("home.html")
 
 
 @app.route("/search")
 def search():
-    return render_template("search.html")
+    keyword = request.args.get("keyword")
+
+    jobs_jobsdb = parser(keyword)
+    jobs = jobs_jobsdb
+
+    return render_template("search.html", keyword=keyword, jobs=jobs)
 
 
 if __name__ == "__main__":
