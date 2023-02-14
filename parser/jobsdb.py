@@ -50,6 +50,13 @@ def parser(keyword):
                     company_logo = company_logo_src.get("src")
                 else:
                     company_logo = "N/A"
+                # job_description = job_post.find_all(
+                #     "li", attrs={"class": "sx2jih0 zcydq86i"}
+                # )
+                # if job_description:
+                #     job_description = job_description.text
+                # else:
+                #     job_description = None
 
                 data = {
                     "job_title": job_title,
@@ -57,6 +64,7 @@ def parser(keyword):
                     "company_name": company_name,
                     "location": location,
                     "company_logo": company_logo,
+                    # "job_description": job_description,
                 }
 
                 results.append(data)

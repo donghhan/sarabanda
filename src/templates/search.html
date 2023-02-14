@@ -3,6 +3,28 @@
 
 {% block body %}
     <section id="search">
-        <div class="bg-wrapper" style="background-image: url('../static/assets/search-bg.jpg')"></div>        
+        <div class="bg-wrapper" style="background: linear-gradient(to bottom, transparent, white), url('../static/assets/search-bg.jpg')">
+            {% if keyword %}
+                <span>Your search result with {{ keyword }}...</span>
+            {% else %}
+                <span>Please specify your keyword</span>
+            {% endif %}
+        </div>        
+    </section>
+    <section id="jobs">
+        <ul class="job-list">
+            {% for job in jobs %}
+            <li class="job-posting">
+                <a class="job-title" href="{{ job.job_url }}" target="_blank">{{ job.job_title }}</a>
+                <div class="company">
+                    <img class="company-logo" src="{{ job.company_logo }}" alt="Company Logo">
+                </div>
+                <div class="location-wrapper">
+                    <span class="company-name">{{ job.company_name }}</span>
+                    <span class="location">{{ job.location }}</span>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
     </section>
 {% endblock body %}

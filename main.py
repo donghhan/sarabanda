@@ -2,6 +2,7 @@ import os
 from parser.jobsdb import parser
 from flask import Flask, render_template, request
 
+
 app = Flask(
     __name__,
     static_folder=os.path.abspath("./dist/static"),

@@ -1,10 +1,80 @@
+@use "../abstract" as variables;
+
 #search {
   width: 100vw;
-  min-height: 100vh;
+  height: fit-content;
   position: relative;
 
   .bg-wrapper {
     width: 100%;
     height: 450px;
+    position: relative;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 48px;
+    }
+  }
+}
+
+#jobs {
+  width: 100vw;
+  min-height: 50vh;
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .job-list {
+    width: 80%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    .job-posting {
+      box-shadow: 4px -1px 22px 4px rgba(214, 214, 214, 0.88);
+      border-radius: 10px;
+      min-height: 200px;
+      padding: 50px 100px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .job-title {
+        color: variables.$signature;
+        font-weight: 700;
+        font-size: 25px;
+        margin-bottom: 10px;
+        max-width: 70%;
+      }
+
+      .company {
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .company-logo {
+          max-width: 150px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .location-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .location {
+          font-weight: 700;
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
