@@ -3,11 +3,7 @@ from parser.jobsdb import parser
 from flask import Flask, render_template, request
 
 
-app = Flask(
-    __name__,
-    static_folder=os.path.abspath("./dist/static"),
-    template_folder=os.path.abspath("./dist/templates"),
-)
+app = Flask(__name__)
 
 
 @app.route("/")
